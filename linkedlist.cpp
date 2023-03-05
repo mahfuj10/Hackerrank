@@ -28,9 +28,34 @@ void insertTail(node *tail, int val)
     tail = newNode;
 }
 
-void deleteNodeData(node *head)
+void deleteNode(node **head, int position)
 {
-    head = head->next;
+    node *curr = *head;
+    node *prev = *head;
+
+    if (*head == NULL)
+    {
+        return;
+    }
+
+    if (position == 1)
+    {
+        *head = curr->next;
+        free(curr);
+        curr = NULL;
+        return;
+    }
+
+    while (position != 1)
+    {
+        prev = curr;
+        curr = curr->next;
+        position--;
+    }
+
+    prev->next = curr->next;
+    free(curr);
+    curr = NULL;
 };
 
 void insertNodeByIndex(node *head, int val, int index)
@@ -70,7 +95,7 @@ int main()
     insertFirst(&head, 1);
     insertTail(head, 10);
     insertFirst(&head, 12);
-    deleteNodeData(head);
+    deleteNode(&head, 1);
     display(head);
     return 0;
 };
