@@ -163,6 +163,7 @@ int main()
     insertFirst(&head, 1);
     insertTail(head, 10);
     insertFirst(&head, 12);
+    display(head);
     deleteNode(&head, 1);
     display(head);
     return 0;
