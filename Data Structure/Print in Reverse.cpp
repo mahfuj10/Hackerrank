@@ -4,6 +4,5 @@ void reversePrint(SinglyLinkedListNode *llist)
     {
         reversePrint(llist->next);
         cout << llist->data << endl;
-        llist = llist->next;
     };
 }
