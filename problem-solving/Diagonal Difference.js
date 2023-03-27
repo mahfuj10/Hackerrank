@@ -7,6 +7,6 @@ function diagonalDifference(arr) {
         s1+=arr[i][i]
         s2+=arr[i][size-i-1]
     }
+    
     return Math.abs(s1 - s2)
-// return arr
 }
