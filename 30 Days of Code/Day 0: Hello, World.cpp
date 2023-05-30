@@ -7,8 +7,12 @@ using namespace std;
 
 int main()
 {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    string inputString;        // declare a variable to hold our input
+    getline(cin, inputString); // get a line of input from cin and save it to our variable
+
     cout << "Hello, World." << endl;
-    cout << "Welcome to 30 Days of Code!";
+
+    cout << inputString << endl;
+
     return 0;
 }
